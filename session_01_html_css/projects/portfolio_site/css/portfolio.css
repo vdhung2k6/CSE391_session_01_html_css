@@ -136,7 +136,11 @@
     opacity: 1;
 }
 
-/* Lightbox */
+/* ============================================
+   CSS-Only Lightbox (Using :target selector)
+   ============================================ */
+
+/* Lightbox Container */
 .lightbox {
     position: fixed;
     inset: 0;
@@ -146,16 +150,20 @@
     align-items: center;
     opacity: 0;
     visibility: hidden;
-    transition: all 0.3s ease;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
     z-index: 2000;
     padding: var(--spacing-md);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
 }
 
+/* Show lightbox when hash target matches */
 .lightbox:target {
     opacity: 1;
     visibility: visible;
 }
 
+/* Lightbox Content Wrapper */
 .lightbox-content {
     position: relative;
     max-width: 90%;
@@ -163,16 +171,20 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    animation: zoomIn 0.3s ease;
 }
 
+/* Lightbox Image */
 .lightbox img {
     width: 100%;
     height: auto;
     max-height: 80vh;
     object-fit: contain;
     border-radius: 8px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
 }
 
+/* Lightbox Close Button */
 .lightbox-close {
     position: absolute;
     top: -40px;
@@ -181,12 +193,72 @@
     color: white;
     text-decoration: none;
     font-weight: 300;
-    transition: color var(--transition-normal);
+    transition: all var(--transition-normal);
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    line-height: 1;
 }
 
 .lightbox-close:hover {
     color: var(--color-primary);
+    transform: rotate(90deg);
+}
+
+/* Zoom In Animation */
+@keyframes zoomIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Responsive Lightbox Design */
+@media (max-width: 768px) {
+    .lightbox {
+        padding: 1rem;
+    }
+
+    .lightbox-content {
+        max-height: 85vh;
+    }
+
+    .lightbox img {
+        max-height: 75vh;
+    }
+
+    .lightbox-close {
+        top: -30px;
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .lightbox {
+        padding: 0.5rem;
+    }
+
+    .lightbox-content {
+        max-height: 80vh;
+    }
+
+    .lightbox img {
+        max-height: 70vh;
+    }
+
+    .lightbox-close {
+        top: -25px;
+        font-size: 1.75rem;
+        width: 40px;
+        height: 40px;
+    }
 }
 
 /* Responsive Design */
