@@ -1,0 +1,156 @@
+/* ============================================
+   Hero Section Styles
+   ============================================ */
+
+/* Hero Section Container */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+    color: white;
+    padding: var(--spacing-lg);
+    position: relative;
+}
+
+/* Optional: Overlay for better text readability */
+.hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 0;
+}
+
+/* Hero Content Wrapper */
+.hero > * {
+    position: relative;
+    z-index: 1;
+}
+
+/* Hero Title (h1) */
+.hero h1 {
+    font-size: var(--font-size-6xl);
+    font-weight: 700;
+    margin-bottom: var(--spacing-xl);
+    color: white;
+    line-height: var(--line-height-tight);
+    letter-spacing: var(--letter-spacing-tight);
+    animation: fadeInUp 0.8s ease-out;
+}
+
+/* Hero Subtitle (p) */
+.hero p {
+    font-size: var(--font-size-xl);
+    font-weight: 300;
+    margin-bottom: var(--spacing-2xl);
+    color: rgba(255, 255, 255, 0.9);
+    animation: fadeInUp 0.8s ease-out 0.2s both;
+}
+
+/* CTA Button */
+.cta-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 2.5rem;
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    background: white;
+    border: 2px solid white;
+    border-radius: var(--radius-lg);
+    text-decoration: none;
+    transition: all var(--transition-normal);
+    cursor: pointer;
+    animation: fadeInUp 0.8s ease-out 0.4s both;
+}
+
+.cta-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    background: var(--color-primary);
+    color: white;
+}
+
+.cta-button:active {
+    transform: scale(0.98);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .hero h1 {
+        font-size: 3rem;
+    }
+
+    .hero p {
+        font-size: 1.125rem;
+    }
+
+    .cta-button {
+        padding: 0.875rem 2rem;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        min-height: 100vh;
+        padding: var(--spacing-lg) var(--spacing-md);
+        justify-content: center;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+        margin-bottom: var(--spacing-lg);
+    }
+
+    .hero p {
+        font-size: 1rem;
+        margin-bottom: var(--spacing-xl);
+    }
+
+    .cta-button {
+        padding: 0.75rem 1.75rem;
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        min-height: calc(100vh - 60px);
+        padding: var(--spacing-md);
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+        margin-bottom: var(--spacing-md);
+    }
+
+    .hero p {
+        font-size: 0.95rem;
+        margin-bottom: var(--spacing-lg);
+    }
+
+    .cta-button {
+        padding: 0.65rem 1.5rem;
+        font-size: 0.9rem;
+        width: 100%;
+        max-width: 250px;
+    }
+}
