@@ -1,0 +1,126 @@
+/* ============================================
+   About Section Styles
+   ============================================ */
+
+/* About Section */
+.about-section {
+    background: #fff;
+}
+
+/* About Grid Layout */
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+/* About Image */
+.about-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.about-image img {
+    width: 300px;
+    height: 300px;
+    border-radius: 12px;
+    object-fit: cover;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+.about-image img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 40px rgba(99, 102, 241, 0.15);
+}
+
+/* About Content */
+.about-content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.about-content h2 {
+    color: var(--color-dark);
+    margin-bottom: var(--spacing-md);
+}
+
+/* Lead Paragraph */
+.about-content p.lead {
+    font-size: var(--font-size-xl);
+    font-weight: 300;
+    color: var(--color-text);
+    line-height: var(--line-height-relaxed);
+}
+
+/* Body Paragraphs */
+.about-content p {
+    font-size: var(--font-size-base);
+    color: var(--color-text);
+    line-height: var(--line-height-relaxed);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .about-grid {
+        grid-template-columns: 1fr 1.5fr;
+        gap: 2rem;
+    }
+
+    .about-image img {
+        width: 280px;
+        height: 280px;
+    }
+
+    .about-content p.lead {
+        font-size: 1.125rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .about-image {
+        order: -1;
+    }
+
+    .about-image img {
+        width: 200px;
+        height: 200px;
+    }
+
+    .about-content p.lead {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .about-grid {
+        gap: 1rem;
+    }
+
+    .about-image img {
+        width: 180px;
+        height: 180px;
+    }
+
+    .about-content h2 {
+        font-size: 1.75rem;
+        margin-bottom: var(--spacing-sm);
+    }
+
+    .about-content p {
+        font-size: 0.95rem;
+    }
+
+    .about-content p.lead {
+        font-size: 0.95rem;
+    }
+}
