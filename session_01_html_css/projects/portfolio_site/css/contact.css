@@ -123,6 +123,12 @@
     cursor: pointer;
     transition: all var(--transition-normal);
     margin-top: var(--spacing-sm);
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+    -webkit-user-select: none;
 }
 
 .submit-btn:hover {

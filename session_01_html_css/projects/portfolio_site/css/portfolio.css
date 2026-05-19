@@ -33,6 +33,12 @@
     font-weight: 500;
     color: var(--color-primary);
     transition: all var(--transition-normal);
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+    -webkit-user-select: none;
 }
 
 .filter-btn:hover,

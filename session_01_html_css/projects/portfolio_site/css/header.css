@@ -14,6 +14,7 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: var(--spacing-md) var(--spacing-lg);
+    min-height: 60px;
 }
 
 /* Logo */
@@ -23,6 +24,7 @@ header {
     color: var(--color-primary);
     text-decoration: none;
     transition: color var(--transition-normal);
+    white-space: nowrap;
 }
 
 .logo:hover {
@@ -43,6 +45,9 @@ nav a {
     position: relative;
     padding: var(--spacing-sm) 0;
     transition: color var(--transition-normal);
+    min-height: 44px;
+    display: flex;
+    align-items: center;
 }
 
 nav a::after {
@@ -75,6 +80,10 @@ nav a:hover::after {
     flex-direction: column;
     cursor: pointer;
     gap: 5px;
+    padding: var(--spacing-sm);
+    min-width: 44px;
+    min-height: 44px;
+    justify-content: center;
 }
 
 .hamburger span {
@@ -108,6 +117,7 @@ nav a:hover::after {
 
     nav a {
         padding: var(--spacing-md) var(--spacing-lg);
+        min-height: 48px;
         border-left: 4px solid transparent;
         transition: all var(--transition-normal);
     }
@@ -152,6 +162,7 @@ nav a:hover::after {
 @media (max-width: 480px) {
     header {
         padding: var(--spacing-sm) var(--spacing-md);
+        min-height: 56px;
     }
 
     .logo {
@@ -160,5 +171,6 @@ nav a:hover::after {
 
     nav a {
         padding: var(--spacing-md) var(--spacing-md);
+        font-size: 0.95rem;
     }
 }
